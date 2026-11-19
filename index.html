@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Benchmark IAS vidéo · février – novembre 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root { --dark:#2D5E4A; --sage:#5C9877; --light:#A6F781; --deep:#013220; --fluo:#6EFF29;
+           --black:#000; --white:#fff; --grey:#EEEEEE; --axis:#595959; --grid:#D9D9D9; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:"Outfit", "Futura", "Century Gothic", sans-serif; font-weight:300; color:var(--black); background:var(--white); }
+  b, strong { font-weight:400; }
+  h1, h2, h3 { text-transform:uppercase; font-weight:300; letter-spacing:.04em; margin:0; }
+  header { background:var(--deep); color:var(--white); padding:48px 6vw 40px; }
+  header h1 { font-size:clamp(26px, 3.4vw, 44px); }
+  header .sub { margin-top:10px; color:var(--light); font-size:15px; }
+  header .dot { display:inline-block; width:10px; height:10px; background:var(--fluo); margin-right:10px; }
+  nav { position:sticky; top:0; z-index:5; background:var(--dark); display:flex; flex-wrap:wrap; gap:4px 22px; padding:12px 6vw; }
+  nav a { color:var(--white); text-decoration:none; text-transform:uppercase; font-size:12px; letter-spacing:.08em; }
+  nav a:hover { color:var(--fluo); }
+  main { padding:0 6vw 64px; }
+  section { padding-top:48px; }
+  section > h2 { font-size:22px; padding-bottom:10px; border-bottom:2px solid var(--dark); margin-bottom:20px; }
+  section > h2::before { content:""; display:inline-block; width:12px; height:12px; background:var(--fluo); margin-right:12px; }
+  h3 { font-size:15px; color:var(--dark); margin:26px 0 10px; }
+  p, li { line-height:1.55; font-size:15px; }
+  .alerts { background:var(--grey); padding:18px 24px 18px 40px; margin:28px 0 0; }
+  .alerts li { margin:4px 0; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:14px; }
+  .card { background:var(--dark); color:var(--white); padding:20px 22px; }
+  .card-t { text-transform:uppercase; font-size:13px; letter-spacing:.08em; color:var(--light); }
+  .card-v { font-size:46px; color:var(--fluo); margin:8px 0 4px; }
+  .card-s { font-size:14px; }
+  .card-m { font-size:12px; color:var(--light); margin-top:6px; }
+  .tw { overflow-x:auto; margin:8px 0; }
+  table { border-collapse:collapse; width:100%; font-size:14px; }
+  th { background:var(--sage); color:var(--white); font-weight:300; text-align:center; padding:9px 10px; white-space:nowrap; }
+  td { padding:7px 10px; border-bottom:1px solid var(--grid); text-align:center; white-space:nowrap; }
+  td:first-child { text-align:left; white-space:pre; }
+  td.n { text-align:right; }
+  td.up { background:var(--light); }
+  td.nd { background:var(--grey); color:var(--axis); }
+  tr.tot td, tr.ref td { background:var(--grey); }
+  tr.tot td.up { background:var(--light); }
+  tr.ref td { font-weight:400; }
+  .legend { font-size:13px; color:var(--axis); margin:6px 0 0; }
+  .legend i { display:inline-block; width:12px; height:12px; background:var(--light); vertical-align:-1px; margin-right:6px; }
+  .chart { position:relative; height:340px; margin:18px 0 6px; }
+  .note { background:var(--grey); padding:14px 18px; font-size:14px; margin:14px 0; }
+  .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  @media (max-width:900px) { .grid2 { grid-template-columns:1fr; } }
+  footer { background:var(--black); color:var(--white); padding:22px 6vw; font-size:12px; }
+  footer span { color:var(--fluo); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Benchmark IAS · vidéo France</h1>
+  <div class="sub"><span class="dot"></span>février – novembre 2026 · tous devices · source IAS (crb_rp_dbx performance 2026-11-06T1328-2.xlsx)</div>
+</header>
+<nav>
+  <a href="#synthese">Synthèse</a><a href="#classement">Classement BVOD &amp; SVOD</a><a href="#autres">Autres</a>
+  <a href="#social">Social media</a><a href="#vis100">Focus TikTok &amp; Snap</a><a href="#fast">FAST</a><a href="#methode">Méthodologie</a>
+</nav>
+<main>
+  <ul class="alerts"><li>La dimension device est absente de l’export : tous les taux sont en tous devices, sans split CTV / Desktop / Phone / Tablet.</li><li>Pas de fichier IVT : la fraude n’est pas mesurée.</li><li>Mois incomplets d’après les volumes : 2026-02, 2026-11.</li><li>Netflix sort du benchmark : 110 610 774 impressions trackées sur 110 610 774 ont un quartile 4 supérieur au quartile 3.</li><li>RMC BFM Ads : 62,4 % d’impressions valides. Il est exclu du BVOD affiché.</li></ul>
+
+  <section id="synthese">
+    <h2>Synthèse</h2>
+    <div class="cards">
+        <div class="card">
+          <div class="card-t">BVOD + SVOD</div>
+          <div class="card-v">87,0 %</div>
+          <div class="card-s">Vis. 50 %/2s · +1,9 pp vs YouTube</div>
+          <div class="card-m">1,25 Md vidéos valides · hors RMC BFM Ads</div>
+        </div>
+        <div class="card">
+          <div class="card-t">YouTube</div>
+          <div class="card-v">85,0 %</div>
+          <div class="card-s">Vis. 50 %/2s · Référence</div>
+          <div class="card-m">11,59 Md vidéos valides · référence</div>
+        </div>
+        <div class="card">
+          <div class="card-t">Autres</div>
+          <div class="card-v">83,8 %</div>
+          <div class="card-s">Vis. 50 %/2s · -1,2 pp vs YouTube</div>
+          <div class="card-m">4,55 Md vidéos valides · hors social, SVOD, BVOD</div>
+        </div></div>
+    <h3>Tous les indicateurs par segment</h3>
+    <div class="tw"><table class="fw"><thead><tr><th>Segment</th><th>Vidéos valides</th><th>% valides</th><th>Vis. 50%/2s</th><th>Vis. 100%/2s</th><th>Q 25%</th><th>Q 50%</th><th>Q 75%</th><th>Q 100%</th></tr></thead><tbody><tr class="tot"><td>BVOD + SVOD (hors RMC)</td><td class="n">1,25 Md</td><td class="">97,8 %</td><td class="up ">87,0 %</td><td class="">5,7 %</td><td class="">71,6 %</td><td class="up ">70,4 %</td><td class="up ">68,8 %</td><td class="">65,5 %</td></tr><tr class=""><td>    BVOD (hors RMC)</td><td class="n">177,3 M</td><td class="">95,9 %</td><td class="up ">95,4 %</td><td class="">13,4 %</td><td class="up ">79,4 %</td><td class="up ">78,5 %</td><td class="up ">77,6 %</td><td class="up ">76,0 %</td></tr><tr class=""><td>    SVOD</td><td class="n">1,07 Md</td><td class="">98,2 %</td><td class="">83,8 %</td><td class="">2,5 %</td><td class="">70,4 %</td><td class="">69,0 %</td><td class="">67,3 %</td><td class="">63,8 %</td></tr><tr class="ref"><td>YouTube</td><td class="n">11,59 Md</td><td class="">99,2 %</td><td class="">85,0 %</td><td class="">84,7 %</td><td class="">77,0 %</td><td class="">70,3 %</td><td class="">67,5 %</td><td class="">66,0 %</td></tr><tr class="tot"><td>Autres</td><td class="n">4,55 Md</td><td class="">96,9 %</td><td class="">83,8 %</td><td class="">12,1 %</td><td class="up ">82,0 %</td><td class="up ">77,3 %</td><td class="up ">73,3 %</td><td class="up ">68,5 %</td></tr><tr class="tot"><td>Social Media (7 réseaux)</td><td class="n">30,74 Md</td><td class="">99,8 %</td><td class="">20,7 %</td><td class="">2,1 %</td><td class="">10,8 %</td><td class="">5,8 %</td><td class="">3,9 %</td><td class="">2,9 %</td></tr></tbody></table></div>
+    <p class="legend"><i></i>au-dessus de YouTube</p>
+    <div class="chart"><canvas id="cSeg"></canvas></div>
+  </section>
+
+  <section id="classement">
+    <h2>Classement BVOD &amp; SVOD</h2>
+    <p>Score = nombre d’indicateurs sur 6 (visibilité 50 %, visibilité 100 %, quatre quartiles) strictement au-dessus de YouTube. Une ligne par media partner, tous devices.</p>
+    <h3>BVOD</h3><div class="tw"><table class="fw"><thead><tr><th>Media partner</th><th>Vidéos valides</th><th>% valides</th><th>Vis. 50%/2s</th><th>Vis. 100%/2s</th><th>Q 25%</th><th>Q 50%</th><th>Q 75%</th><th>Q 100%</th><th>Score</th></tr></thead><tbody><tr class=""><td>1. M6</td><td class="n">55,0 M</td><td class="">93,7 %</td><td class="up ">97,8 %</td><td class="">18,6 %</td><td class="up ">83,7 %</td><td class="up ">83,0 %</td><td class="up ">82,3 %</td><td class="up ">80,8 %</td><td class="up">5/6</td></tr><tr class=""><td>2. TF1</td><td class="n">88,1 M</td><td class="">97,6 %</td><td class="up ">94,4 %</td><td class="">11,6 %</td><td class="up ">80,7 %</td><td class="up ">79,7 %</td><td class="up ">79,0 %</td><td class="up ">77,6 %</td><td class="up">5/6</td></tr><tr class=""><td>3. RMC BFM Ads</td><td class="n">7,5 M</td><td class="">62,4 %</td><td class="up ">89,7 %</td><td class="">17,4 %</td><td class="">73,6 %</td><td class="up ">71,9 %</td><td class="up ">70,6 %</td><td class="up ">69,0 %</td><td class="">4/6</td></tr><tr class=""><td>4. France TV</td><td class="n">27,0 M</td><td class="">94,2 %</td><td class="up ">94,1 %</td><td class="">8,7 %</td><td class="">70,6 %</td><td class="">69,5 %</td><td class="up ">68,7 %</td><td class="up ">67,7 %</td><td class="">3/6</td></tr><tr class=""><td>5. Canal Plus</td><td class="n">7,2 M</td><td class="">99,2 %</td><td class="up ">85,8 %</td><td class="">22,4 %</td><td class="">64,8 %</td><td class="">61,9 %</td><td class="">57,5 %</td><td class="">50,8 %</td><td class="">1/6</td></tr></tbody></table></div><h3>SVOD</h3><div class="tw"><table class="fw"><thead><tr><th>Media partner</th><th>Vidéos valides</th><th>% valides</th><th>Vis. 50%/2s</th><th>Vis. 100%/2s</th><th>Q 25%</th><th>Q 50%</th><th>Q 75%</th><th>Q 100%</th><th>Score</th></tr></thead><tbody><tr class=""><td>1. Amazon Media Group</td><td class="n">1,06 Md</td><td class="">98,2 %</td><td class="">84,3 %</td><td class="">2,5 %</td><td class="">70,5 %</td><td class="">69,2 %</td><td class="up ">67,5 %</td><td class="">63,9 %</td><td class="">1/6</td></tr><tr class=""><td>2. Disney (Sell)</td><td class="n">7,2 M</td><td class="">96,4 %</td><td class="">2,1 %</td><td class="">0,0 %</td><td class="">43,4 %</td><td class="">43,1 %</td><td class="">42,9 %</td><td class="">42,1 %</td><td class="">0/6</td></tr></tbody></table></div>
+  </section>
+
+  <section id="autres">
+    <h2>Autres · 15 premiers media partners</h2>
+    <div class="tw"><table class="fw"><thead><tr><th>Media partner</th><th>Vidéos valides</th><th>% valides</th><th>Vis. 50%/2s</th><th>Vis. 100%/2s</th><th>Q 25%</th><th>Q 50%</th><th>Q 75%</th><th>Q 100%</th></tr></thead><tbody><tr class="tot"><td>Autres (total)</td><td class="n">4,55 Md</td><td class="">96,9 %</td><td class="">83,8 %</td><td class="">12,1 %</td><td class="up ">82,0 %</td><td class="up ">77,3 %</td><td class="up ">73,3 %</td><td class="up ">68,5 %</td></tr><tr class=""><td>    Google DV360</td><td class="n">1,07 Md</td><td class="">95,3 %</td><td class="up ">87,5 %</td><td class="">7,2 %</td><td class="up ">88,2 %</td><td class="up ">85,1 %</td><td class="up ">82,5 %</td><td class="up ">78,8 %</td></tr><tr class=""><td>    The Trade Desk</td><td class="n">684,0 M</td><td class="">96,3 %</td><td class="">84,9 %</td><td class="">4,7 %</td><td class="up ">85,7 %</td><td class="up ">81,8 %</td><td class="up ">78,2 %</td><td class="up ">73,9 %</td></tr><tr class=""><td>    Teads, Inc.</td><td class="n">526,6 M</td><td class="">99,6 %</td><td class="">75,6 %</td><td class="">9,3 %</td><td class="up ">79,7 %</td><td class="up ">73,2 %</td><td class="up ">67,8 %</td><td class="">60,5 %</td></tr><tr class=""><td>    (n/a)</td><td class="n">371,3 M</td><td class="">96,7 %</td><td class="">84,4 %</td><td class="">1,0 %</td><td class="up ">83,6 %</td><td class="up ">78,9 %</td><td class="up ">75,0 %</td><td class="up ">70,7 %</td></tr><tr class=""><td>    Dailymotion</td><td class="n">207,1 M</td><td class="">99,3 %</td><td class="">85,0 %</td><td class="">1,0 %</td><td class="up ">82,1 %</td><td class="up ">76,2 %</td><td class="up ">70,6 %</td><td class="">64,9 %</td></tr><tr class=""><td>    PM-Precision</td><td class="n">192,2 M</td><td class="">99,3 %</td><td class="">71,8 %</td><td class="">50,3 %</td><td class="">52,2 %</td><td class="">43,6 %</td><td class="">36,9 %</td><td class="">32,2 %</td></tr><tr class=""><td>    Ogury</td><td class="n">150,9 M</td><td class="">99,7 %</td><td class="up ">89,8 %</td><td class="">22,0 %</td><td class="up ">85,0 %</td><td class="up ">80,0 %</td><td class="up ">75,9 %</td><td class="up ">72,0 %</td></tr><tr class=""><td>    366</td><td class="n">137,6 M</td><td class="">99,4 %</td><td class="">81,9 %</td><td class="">23,7 %</td><td class="">68,0 %</td><td class="">60,7 %</td><td class="">54,7 %</td><td class="">49,3 %</td></tr><tr class=""><td>    Amnet</td><td class="n">115,9 M</td><td class="">99,2 %</td><td class="up ">89,4 %</td><td class="">0,0 %</td><td class="up ">82,4 %</td><td class="up ">76,8 %</td><td class="up ">71,7 %</td><td class="">65,5 %</td></tr><tr class=""><td>    Publicis Groupe</td><td class="n">79,9 M</td><td class="">99,3 %</td><td class="up ">85,8 %</td><td class="">69,6 %</td><td class="up ">79,4 %</td><td class="up ">74,1 %</td><td class="up ">68,8 %</td><td class="">63,3 %</td></tr><tr class=""><td>    Qwarry</td><td class="n">60,4 M</td><td class="">95,7 %</td><td class="up ">86,6 %</td><td class="">0,0 %</td><td class="up ">89,0 %</td><td class="up ">85,0 %</td><td class="up ">81,1 %</td><td class="up ">76,4 %</td></tr><tr class=""><td>    Bcovery</td><td class="n">58,6 M</td><td class="">99,4 %</td><td class="">78,9 %</td><td class="">64,3 %</td><td class="">60,2 %</td><td class="">56,1 %</td><td class="">52,6 %</td><td class="">48,6 %</td></tr><tr class=""><td>    Seed Tag</td><td class="n">51,2 M</td><td class="">99,3 %</td><td class="">84,3 %</td><td class="">10,4 %</td><td class="up ">84,8 %</td><td class="up ">79,7 %</td><td class="up ">74,9 %</td><td class="up ">69,3 %</td></tr><tr class=""><td>    Real Time Bidding</td><td class="n">49,4 M</td><td class="">62,7 %</td><td class="">84,0 %</td><td class="">0,0 %</td><td class="up ">82,9 %</td><td class="up ">82,0 %</td><td class="up ">81,5 %</td><td class="up ">81,1 %</td></tr><tr class=""><td>    DPG Media BE</td><td class="n">47,6 M</td><td class="">98,3 %</td><td class="">83,3 %</td><td class="">27,4 %</td><td class="up ">88,2 %</td><td class="up ">86,0 %</td><td class="up ">84,2 %</td><td class="up ">82,2 %</td></tr></tbody></table></div>
+  </section>
+
+  <section id="social">
+    <h2>Social media · détail par réseau</h2>
+    <div class="tw"><table class="fw"><thead><tr><th>Réseau</th><th>Vidéos valides</th><th>% valides</th><th>Vis. 50%/2s</th><th>Vis. 100%/2s</th><th>Q 25%</th><th>Q 50%</th><th>Q 75%</th><th>Q 100%</th></tr></thead><tbody><tr class="tot"><td>Social Media</td><td class="n">30,74 Md</td><td class="">99,8 %</td><td class="">20,7 %</td><td class="">2,1 %</td><td class="">10,8 %</td><td class="">5,8 %</td><td class="">3,9 %</td><td class="">2,9 %</td></tr><tr class=""><td>    Facebook</td><td class="n">14,08 Md</td><td class="">99,7 %</td><td class="">25,1 %</td><td class="">0,0 %</td><td class="nd">N/D</td><td class="nd">N/D</td><td class="nd">N/D</td><td class="nd">N/D</td></tr><tr class=""><td>    TikTok</td><td class="n">13,29 Md</td><td class="">99,9 %</td><td class="">13,0 %</td><td class="">1,7 %</td><td class="">6,2 %</td><td class="">2,8 %</td><td class="">1,8 %</td><td class="">1,1 %</td></tr><tr class=""><td>    Snapchat</td><td class="n">2,34 Md</td><td class="">99,7 %</td><td class="">20,6 %</td><td class="">2,1 %</td><td class="">18,7 %</td><td class="">11,9 %</td><td class="">8,5 %</td><td class="">7,0 %</td></tr><tr class=""><td>    Pinterest</td><td class="n">807,9 M</td><td class="">99,8 %</td><td class="">69,2 %</td><td class="">33,5 %</td><td class="">60,2 %</td><td class="">35,2 %</td><td class="">24,1 %</td><td class="">17,7 %</td></tr><tr class=""><td>    Reddit</td><td class="n">175,1 M</td><td class="">99,4 %</td><td class="">15,8 %</td><td class="">27,1 %</td><td class="">18,8 %</td><td class="">10,8 %</td><td class="">7,2 %</td><td class="">5,0 %</td></tr><tr class=""><td>    LinkedIn</td><td class="n">30,1 M</td><td class="">99,9 %</td><td class="">30,0 %</td><td class="">0,0 %</td><td class="">17,9 %</td><td class="">7,9 %</td><td class="">4,5 %</td><td class="">3,0 %</td></tr><tr class=""><td>    Spotify</td><td class="n">22,6 M</td><td class="">99,9 %</td><td class="">67,7 %</td><td class="">67,7 %</td><td class="">55,1 %</td><td class="">46,7 %</td><td class="">43,0 %</td><td class="">40,5 %</td></tr><tr class="tot"><td>Social Media hors Facebook</td><td class="n">16,66 Md</td><td class="">99,8 %</td><td class="">17,3 %</td><td class="">3,7 %</td><td class="">10,8 %</td><td class="">5,8 %</td><td class="">3,9 %</td><td class="">2,9 %</td></tr><tr class="ref"><td>YouTube (référence)</td><td class="n">11,59 Md</td><td class="">99,2 %</td><td class="">85,0 %</td><td class="">84,7 %</td><td class="">77,0 %</td><td class="">70,3 %</td><td class="">67,5 %</td><td class="">66,0 %</td></tr></tbody></table></div>
+    <div class="note">Les lignes réseau détaillent le total : ne pas les additionner. Facebook ne remonte pas de quartiles : la complétion du total est calculée sans lui, alors que le % de valides et la visibilité l’incluent. La ligne « hors Facebook » est homogène sur toutes les colonnes. Twitter est absent de l’export.</div>
+  </section>
+
+  <section id="vis100">
+    <h2>Focus visibilité 100 % / 2 s · TikTok &amp; Snapchat</h2>
+    <div class="cards"><div class="card"><div class="card-t">TikTok</div><div class="card-v">1,7 %</div><div class="card-s">Vis. 100 %/2s · -83,0 pp vs YouTube</div></div><div class="card"><div class="card-t">Snapchat</div><div class="card-v">2,1 %</div><div class="card-s">Vis. 100 %/2s · -82,6 pp vs YouTube</div></div><div class="card"><div class="card-t">Social hors Facebook et LinkedIn</div><div class="card-v">3,7 %</div><div class="card-s">Vis. 100 %/2s · -81,0 pp vs YouTube</div></div><div class="card"><div class="card-t">YouTube</div><div class="card-v">84,7 %</div><div class="card-s">Vis. 100 %/2s · Référence</div></div></div>
+    <div class="chart"><canvas id="cV100"></canvas></div>
+    <div class="note">Vis. 100 %/2s = Viewable Impressions CM ÷ Measured Ads CM : tous les pixels visibles pendant 2 secondes. Facebook et LinkedIn ne remontent aucune impression visible CM : leur 0 % n’est pas une vraie mesure, ils sont retirés du total social de la carte. Plus de 99,9 % du volume TikTok et Snapchat est In-App, soit du feed mobile.</div>
+  </section>
+
+  <section id="fast">
+    <h2>FAST · Pluto TV, Samsung TV Plus, Rakuten TV, LG Channels</h2>
+    <div class="tw"><table class="fw"><thead><tr><th>Plateforme</th><th>Partner IAS</th><th>Vidéo trackées</th><th>Display trackées</th><th>% valides</th><th>Vis. 50%/2s</th><th>Vis. 100%/2s</th><th>Q 25%</th><th>Q 100%</th><th>Statut</th></tr></thead><tbody><tr><td>Pluto TV</td><td>Paramount Streaming</td><td class="n">0</td><td class="n">12</td><td class="nd">N/D</td><td class="nd">N/D</td><td class="nd">N/D</td><td class="nd">N/D</td><td class="nd">N/D</td><td>Display seulement</td></tr><tr><td>Samsung TV Plus</td><td>Samsung</td><td class="n">2 197 168</td><td class="n">0</td><td class="">98,9 %</td><td class="nd">N/D</td><td class="nd">N/D</td><td class="up ">96,7 %</td><td class="up ">88,2 %</td><td>Vidéo</td></tr><tr><td>Rakuten TV</td><td>Rakuten (Sell)</td><td class="n">0</td><td class="n">518 182</td><td class="nd">N/D</td><td class="nd">N/D</td><td class="nd">N/D</td><td class="nd">N/D</td><td class="nd">N/D</td><td>Display seulement</td></tr><tr><td>LG Channels</td><td>—</td><td class="n">0</td><td class="n">0</td><td class="nd">N/D</td><td class="nd">N/D</td><td class="nd">N/D</td><td class="nd">N/D</td><td class="nd">N/D</td><td>Absent</td></tr></tbody></table></div>
+    <div class="note">Les plateformes FAST sont quasi absentes de l’export : 2 197 168 impressions vidéo trackées au total. Elles sont surtout achetées en programmatique et rangées sous le DSP ou l’acheteur. Pour un vrai benchmark FAST, il faut un export IAS avec le device et le nom du placement ou de l’app.</div>
+  </section>
+
+  <section id="methode">
+    <h2>Méthodologie</h2>
+    <div class="grid2">
+      <div>
+        <h3>Formules</h3>
+        <ul>
+          <li>% valides = Valid video ads ÷ Total tracked ads</li>
+          <li>Vis. 50 %/2s = Viewable impressions ÷ Measured impressions (Disney : ÷ Net Measured Ads)</li>
+          <li>Vis. 100 %/2s = Viewable Impressions CM ÷ Measured Ads CM</li>
+          <li>Quartile 25 / 50 / 75 / 100 % = Valid quartiles 1q / 2q / 3q / 4q ÷ Valid video ads</li>
+          <li>Taux pondérés : somme des numérateurs ÷ somme des dénominateurs</li>
+        </ul>
+        <h3>Segments</h3>
+        <ul>
+          <li>SVOD : Amazon Media Group, Disney (Sell), Netflix</li>
+          <li>BVOD : TF1, M6, Canal Plus, France TV (RMC BFM Ads à part)</li>
+          <li>YouTube : référence</li>
+          <li>Autres : tous les autres partners, hors social</li>
+          <li>Social media : Facebook, TikTok, Snapchat, Pinterest, Reddit, LinkedIn, Spotify (sans filtre de quartiles)</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Lignes retirées</h3>
+        <div class="tw"><table class="fw"><thead><tr><th>Étape</th><th>Lignes</th><th>Impressions trackées</th></tr></thead><tbody><tr class=""><td>Ligne de total de l’export</td><td class="n">1</td><td class="n">87 778 705 155</td></tr><tr class=""><td>Vidéo uniquement (display et audio retirés)</td><td class="n">1 978</td><td class="n">48 673 438 580</td></tr><tr class=""><td>Social exclu du benchmark</td><td class="n">142</td><td class="n">30 810 257 145</td></tr><tr class=""><td>Quartiles manquants</td><td class="n">10</td><td class="n">15 008 959</td></tr><tr class=""><td>Quartiles non décroissants (Q1 ≥ Q2 ≥ Q3 ≥ Q4)</td><td class="n">54</td><td class="n">178 689 238</td></tr><tr class="tot"><td>Retenu dans le benchmark</td><td class="n">1 772</td><td class="n">17 669 483 238</td></tr></tbody></table></div>
+        <div class="tw"><table class="fw"><thead><tr><th>Partner exclu (quartiles)</th><th>Lignes</th><th>Impressions trackées</th></tr></thead><tbody><tr><td>Netflix - Partner Measurement</td><td class="n">20</td><td class="n">110 610 774</td></tr><tr><td>Amazon Media Group</td><td class="n">1</td><td class="n">47 678 126</td></tr><tr><td>Youtube - Partner Measurement</td><td class="n">10</td><td class="n">15 008 959</td></tr><tr><td>Dailymotion</td><td class="n">3</td><td class="n">9 091 120</td></tr><tr><td>HPH</td><td class="n">2</td><td class="n">4 439 990</td></tr><tr><td>Disney (Sell)</td><td class="n">4</td><td class="n">3 558 119</td></tr><tr><td>Ogury</td><td class="n">1</td><td class="n">1 549 645</td></tr><tr><td>RTL Plus</td><td class="n">3</td><td class="n">764 986</td></tr></tbody></table></div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><span>■</span> IAS · Benchmark vidéo · février – novembre 2026 · Confidentiel</footer>
+<script>
+  const C = ["#2D5E4A", "#5C9877", "#6EFF29"];
+  Chart.defaults.font.family = "Outfit, sans-serif";
+  Chart.defaults.font.weight = 300;
+  Chart.defaults.color = "#595959";
+  const axes = {
+    x: { grid: { display:false }, ticks: { color:"#595959" } },
+    y: { beginAtZero:true, grid: { color:"#D9D9D9" }, ticks: { color:"#595959", callback: v => v + " %" } }
+  };
+  const tip = { callbacks: { label: c => c.dataset.label + " : " + (c.raw === null ? "N/D" : c.raw.toLocaleString("fr-FR") + " %") } };
+  const seg = {"labels": ["Vis. 50%/2s", "Vis. 100%/2s", "Q 25%", "Q 50%", "Q 75%", "Q 100%"], "series": [{"name": "BVOD + SVOD", "data": [87.0, 5.7, 71.6, 70.4, 68.8, 65.5]}, {"name": "YouTube", "data": [85.0, 84.7, 77.0, 70.3, 67.5, 66.0]}, {"name": "Autres", "data": [83.8, 12.1, 82.0, 77.3, 73.3, 68.5]}]};
+  new Chart(document.getElementById("cSeg"), {
+    type: "bar",
+    data: { labels: seg.labels, datasets: seg.series.map((s, i) => ({ label: s.name, data: s.data, backgroundColor: C[i] })) },
+    options: { maintainAspectRatio:false, scales: axes, plugins: { legend: { position:"bottom" }, tooltip: tip } }
+  });
+  const v = {"labels": ["2026-02", "2026-03", "2026-04", "2026-05", "2026-06", "2026-07", "2026-08", "2026-09", "2026-10", "2026-11"], "series": [{"name": "TikTok", "data": [1.77, 0.88, 0.35, 1.1, 2.45, 3.13, 2.36, 1.01, 1.89, 1.01]}, {"name": "Snapchat", "data": [2.04, 2.53, 1.97, 3.09, 2.42, 1.33, 1.68, 1.32, 2.32, 2.33]}, {"name": "YouTube", "data": [83.72, 85.85, 84.57, 81.5, 83.23, 85.18, 86.75, 85.26, 87.57, 89.89]}]};
+  new Chart(document.getElementById("cV100"), {
+    type: "line",
+    data: { labels: v.labels, datasets: v.series.map((s, i) => ({ label: s.name, data: s.data, borderColor: C[i], backgroundColor: C[i], pointRadius:3, tension:0 })) },
+    options: { maintainAspectRatio:false, scales: axes, plugins: { legend: { position:"bottom" }, tooltip: tip } }
+  });
+</script>
+</body>
+</html>
